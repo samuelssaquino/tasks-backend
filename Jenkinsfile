@@ -51,6 +51,14 @@ pipeline{
                 }                
             }
         }
+        stage('Functional Test Web'){
+            steps{
+                dir('functional-test-web') {
+                    git credentialsId: 'github_login', url: 'https://github.com/samuelssaquino/tasks-functional-tests-web'
+                    bat 'mvn test'
+                }                
+            }
+        }
     }
 }
 
