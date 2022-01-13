@@ -69,7 +69,7 @@ public class TaskControllerTest{
     @Test
     public void deveSalvarTarefaComSucesso() throws ValidationException{
         Task todo = new Task();
-        todo.setTask("Descricao");
+        todo.setTask("Task via Unit Test");
         todo.setDueDate(LocalDate.now());
         controller.save(todo);
         Mockito.verify(taskRepo).save(todo);
